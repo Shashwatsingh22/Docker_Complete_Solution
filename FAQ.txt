@@ -1,0 +1,26 @@
+Q) What are the technologies are used in this Tool or Plateform ?
+
+Ans) 1. Terraform 2. Ansible 3. Public Cloud(AWS, OCI) 4. Docker
+
+Q) What are the usecases solving by this application ?
+
+Ans) For Understanding the Answer of this question I have to take u from Container Technology;
+     
+      Container technology is a method of packaging an application so it can be run with isolated       dependencies.
+	
+      Down to this I am giving an Short Diffrence between Container technology and Virtual Machine So that You Can Easily UnderStand.
+
+
+Now, for Controlling and Managing the Container we need an Container Engine. Nowadays there are many open-source project are there like Docker, Rkt, CRI-O etc. So, the most popular one is Docker now day by day they introducing new new features and devloper need read the docs for exact command or they need to hire the devops engineer but with application we have tried to mimic the docker as GUI based so that devloper or any cloud based company don't need to suffer from the documentation or to hire the devops enginnerr.
+
+Q) What is being used in this project for fetching the response from the client server ?
+
+Ans) the Docker tool also provide API service to intergrate the tool with some application. So, we are using that service after configuring some port and for some newer services for which the API Support are not provided by the Docker so we made some api by the help of Python CGI (But in future we will make it by the help of Node).
+
+Q) What are the new features you are going to add ?
+
+Ans) There are some service which are yet to be added like image builder in which we are trying to give the client/user a code editor where they can write the Dockerfile and DockerCompose file then  try to push there coustomize images to the dokcerhub.
+
+Also wants to integrate with github so that they push there code directly throgh this plateform.
+
+     
