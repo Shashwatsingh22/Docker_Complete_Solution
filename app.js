@@ -11,7 +11,6 @@ var assert = require('assert');
 const bcrypt = require('bcrypt');
 const app = express()
 const User = require('./models/user');
-const Machine = require('./models/machine')
 const { render } = require("ejs");
 
 const axios = require('axios');
@@ -27,7 +26,8 @@ app.use(bodyParser.urlencoded({
 }))
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-mongoose.connect('mongodb+srv://testuser:'+ process.env.MONGO_DB_PASS + '@cluster0.xn4zx.mongodb.net/DockerSolutionProject?retryWrites=true&w=majority',{
+
+mongoose.connect('mongodb+srv://aditya_admin:'+ process.env.MONGO_DB_PASS + '@cluster0.aajkb.mongodb.net/DockerDB?retryWrites=true&w=majority',{
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
@@ -60,7 +60,6 @@ app.post("/configure", (req, res, next) => {
             } else {
               const user = new User({
                 _id: new mongoose.Types.ObjectId(),
-                machineip: req.body.machineip,
                 username: req.body.username,
                 password: hash
               });
