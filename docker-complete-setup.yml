@@ -23,7 +23,7 @@
         - name: "Installation Status....."
           debug:
                 msg: "Docker Installation Completed! :) {{ installation_status  }}"
-          when: "installation_status.rc == 0"
+          #when: "installation_status.rc == 0"
 
 
         - name: "Starting Docker Service......."
@@ -36,4 +36,4 @@
         - name: "Docker Service Status......"
           debug :
                 msg : "Docker Service Started Finally :)"
-          when: "service_status.rc == 0"        
+          #when: "service_status.rc == 0"        
