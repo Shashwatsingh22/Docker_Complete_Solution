@@ -4,7 +4,8 @@
   "description": "Using services of docker by the help of this api.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Hello World!\""
+    "test": "echo \"Hello World!\"",
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,11 @@
   },
   "homepage": "https://github.com/Shashwatsingh22/docker_complete_solution#readme",
   "dependencies": {
-    "express": "^4.17.3"
+    "body-parser": "^1.19.2",
+    "express": "^4.17.3",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }

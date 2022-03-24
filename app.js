@@ -8,7 +8,7 @@ const app = express();
 const contSer = require('./api/container')
 const imgSer = require('./api/img')
 const netWorkSer = require('./api/network')
-const dockerFileSer =  require('./api/dockerFile');
+const dockerFileSer =  require('./api/dockerFileSer');
 const res = require('express/lib/response');
 
 //For Logs Managment 
@@ -35,7 +35,13 @@ app.use((req,res,next)=>{
 //Root
 app.use('/',(req,res,next)=>{
     res.status(200).json({
-        msg : "Docker API service Started Bose 😎"
+        msg : "Docker API service Started Bose 😎!",
+        paths : {
+              container_Services : "/contser",
+              image_Services : "/imgSer",
+              network_Services : "/netSer",
+              dockerFile_Services : "/dockerFileSer"
+                     }
     })
 })
 
