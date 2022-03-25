@@ -9,7 +9,7 @@
 #-------------------------------------------------------------------------------------------------------------------------------
 
 - hosts :
-        - tag_Name_api_for_compiling
+        - tag_Name_Webserver
 
   tasks:
         - name: "Installation Of Docker....."
@@ -23,7 +23,7 @@
 
         - name: "Installation Status....."
           debug:
-                msg: "Docker Installation Completed! :) {{ installation_status  }}"
+                msg: "Docker Installation Completed! :)"
           when: "installation_status.failed == false"
 
 
@@ -38,3 +38,18 @@
           debug :
                 msg : "Docker Service Started Finally :)"
           when: "service_status.failed == false"        
+
+        - name: "Replacing the docker service file....."
+          copy:
+                src: docker.service
+                dest: /lib/systemd/system/docker.service
+
+        - name: "daemon reload"
+          systemd:
+                name: docker.service
+                state: reloaded
+
+        - name: "Enabling services docker"
+          service:
+                name: docker
+                state: restarted
