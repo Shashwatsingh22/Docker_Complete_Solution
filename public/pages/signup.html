@@ -1,45 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔐 SignUp</title>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <link rel="stylesheet" type="text/css" href="/css/styles.css">
-    <link rel="shortcut icon" type="image/png" href="/images/Automation.png"/>
-</head>
-
-<body>
-    <img class="image" width="100%" height="100%" src="/images/intro2.gif">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-
-            </div>
-            <div class="col-md-6 main">
-                <form action="/sign_up" method="POST">
-                    <h1 style="padding-left: 0px">Sign Up</h1>
-                    <h4><b>Username</b></h4>
-                    <input style="color: black" type="text" class="box" id="email" name="username" placeholder="Username" autocomplete="off"  />
-                    <br>
-                    <h4><b>Email</b></h4>
-                    <input style="color: black" type="text" class="box" id="email" name="email" placeholder="Email" autocomplete="off"  />
-                    <br>
-                    <h4><b>Password</b></h4>
-                    <input style="color: black"  type="password" class="box" id="password" name="password" placeholder="Password" autocomplete="off" />
-                    <br>          
-                    <input style="color: black" class="btn5" type="submit" value="Sign Up" id="submit" />
-                    <h2>Already have an account?<a href='/login'>Login</a></h2>
-                </form>
-            </div>
-            <div class="col-md-3">
-            </div>
+<html>
+  <head>
+    <title>Simple login form</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <style>
+      html, body {
+      display: flex;
+      justify-content: center;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 15px;
+      width: 90%;
+      }
+      
+      input[type=text], input[type=password] {
+      width: 100%;
+      padding: 16px 8px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      }
+      .btn{
+      background-color: skyblue;
+      color: white;
+      padding: 14px 0;
+      margin: 10px 0;
+      border: none;
+      cursor: grabbing;
+      width: 100%;
+      }
+      h1 {
+      text-align:center;
+      font-size:18;
+      }
+      button:hover {
+      opacity: 0.8;
+      }
+      .formcontainer {
+      text-align: left;
+      margin: 24px 50px 12px;
+      }
+      .container {
+      padding:  0;
+      text-align:left;
+      }
+      span.psw {
+      float: right;
+      padding-top: 0;
+      padding-right: 15px;
+      }
+      /* Change styles for span on extra small screens */
+      @media screen and (max-width: 300px) {
+        span.psw {
+        display: block;
+        float: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+        <div>
+            <img width="100px" src="../images/Automation.png" alt="">
         </div>
+    <form style="margin-top: 5%; " action="/login" method="post"> 
+      <h1>Signup</h1>
+      <hr/>
+      <div class="container">
+        <label for="uname"><strong>Username</strong></label>
+        <input type="text" placeholder="Enter Username" name="username" required>
+        <label for="email"><strong>Email</strong></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+        <label for="psw"><strong>Password</strong></label>
+        <input type="password" placeholder="Enter Password" name="password" required>
+        <label for=""><strong>IAM USER</strong></label>
+        <br>
+        <br>
+        <label for=""><strong>Access Key</strong></label>
+        <input type="password" placeholder="Enter Access Key" name="accesskey" required>
+        <label for=""><strong>Secret Key</strong></label>
+        <input type="password" placeholder="Enter Server Key" name="accesskey" required>
+        <label for=""><strong>Server Public Key</strong></label>
+        <input type="file" placeholder="Enter Access Key" name="accesskey" required>
+      </div>
+      <div class="container" >
+        <input style="color: black;" class="first btn"  type="submit" value="Signup" id="submit" />
+        <h2 style="color: black">New to DCS?<a href='/login' style="color: aqua;">Login</a></h2>
+      </div>
+      
+    </form>
+    <div style="display: flex;">
+        <img width="500px" height="400px" style="margin-top: 20%; margin-left: 10%; margin-right: 10%; border: 1px solid black;" src="../images/ansible-container-1.webp" alt="">
     </div>
-
-</body>
-
+    
+  </body>
 </html>
