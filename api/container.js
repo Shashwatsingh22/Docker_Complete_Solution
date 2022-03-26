@@ -50,7 +50,7 @@ routes.get('/view',async(req,res,next)=>
     }
 })
 
-routes.get('/dep',async(req,res,next)=>
+routes.post('/change',async(req,res,next)=>
 {
     const action = req.body.action;
 
