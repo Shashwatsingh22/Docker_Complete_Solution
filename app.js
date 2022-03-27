@@ -33,17 +33,17 @@ app.use((req,res,next)=>{
 })
 
 //Root
-app.use('/',(req,res,next)=>{
-    res.status(200).json({
-        msg : "Docker API service Started Bose 😎!",
-        paths : {
-              container_Services : "/contser",
-              image_Services : "/imgSer",
-              network_Services : "/netSer",
-              dockerFile_Services : "/dockerFileSer"
-                     }
-    })
-})
+// app.use('/',(req,res,next)=>{
+//     res.status(200).json({
+//         msg : "Docker API service Started Bose 😎!",
+//         paths : {
+//               container_Services : "/contSer",
+//               image_Services : "/imgSer",
+//               network_Services : "/netSer",
+//               dockerFile_Services : "/dockerFileSer"
+//                      }
+//     })
+// })
 
 //Container Service
 app.use('/contSer', contSer);

@@ -29,16 +29,20 @@ routes.get('/view',(req,res,next)=>
         case 'list':
             const cmd = 'sudo docker ps';
             runCmd(cmd,res);
+            break;
+        
         
         case 'inspect_by_id':
             const cont_id = req.body.cont_id;
             cmd = 'sudo docker container inspect '+ cont_id;
             runCmd(cmd,res);
+            break;
         
         case 'inspect_by_name':
             const cont_name=req.body.cont_name;
             cmd = 'sudo docker container inspect '+cont_name;
-            runCmd(cmd,res); 
+            runCmd(cmd,res);
+            break; 
         
         case 'log':
             cont_name=req.body.cont_name;
@@ -49,6 +53,7 @@ routes.get('/view',(req,res,next)=>
             else cmd = cmd + cont_name;
         
             runCmd(cmd,res);
+            break;
     }
 })
 
@@ -66,16 +71,24 @@ routes.post('/change',(req,res,next)=>
 
             const cmd = 'sudo docker run -dit --name '+tag+' -p '+out_port+':'+in_port+' '+img_name_with_ver;
             runCmd(cmd,res)
+            break;
         
         case 'stop':
             const cont_name = req.body.cont_name;
             cmd='sudo docker container stop '+cont_name;
             runCmd(cmd,res);
+            break;
         
         case 'start':
             cont_name = req.body.cont_name;
             cmd='sudo docker container start '+cont_name;
             runCmd(cmd,res);    
+            break;
+        
+        default:
+            res.status(200).json({
+                output : "Wrong Action",
+            })    
     }
 })
 
