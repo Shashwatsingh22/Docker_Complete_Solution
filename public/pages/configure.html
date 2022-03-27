@@ -4,41 +4,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SignUp Form - MongoDB</title>
+    <title>🖥Controller</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
     <link rel="shortcut icon" type="image/png" href="/images/Automation.png"/>
+    <style>
+     
+    </style>
 </head>
 
-<body>
     
-    
-     <img class="image" width="100%" height="100%" src="/images/intro2.gif">
-    <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-custom navbar-dark">
-            <a class="navbar-brand"><img width="65px" src="/images/Automation.png" ></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+<body style="background: url('https://www.teahub.io/photos/full/88-889736_download-3d-simple-background-wallpapers-hd-desktop-3d.jpg');">
+    <div id="">
+        <nav style="background-color: rgba(169, 169, 169, 0.329); padding-bottom: -50px" class="navbar navbar-expand-lg navbar-dark">
+          <a class="navbar-brand" href="#"><img src="../images/Automation.png" width="5%" alt=""></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-            </button>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/pages/index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html">FAQ's</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#footer">Documentation</a>
-                </li>
+          </button>
+          <div style="margin-right:  0;" class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                  <a style=" font-size: 15px" class="nav-link" href="#"><b>Home</b></a>
+              </li>
+              <li class="nav-item">
+                <a style=" font-size: 15px" class="nav-link" href="#"><b>FAQ</b></a>
+              </li>
+              <li class="nav-item">
+                <a style="font-size: 15px" class="nav-link" href="#"><b>Documentation</b></a>
+              </li>
             </ul>
           </div>
         </nav>
-        <div class="form">
-            <form action="/configure" method="POST">
+      </div>
+      <a style="font-size: 30px; margin-left: 5%;" href="/option">🏠 →</a>
+      <a style="font-size: 30px;" href="#">Serverless</a>
+    <div class="container">
+      
+
+        
+        <div style="margin-left: 0%; float: left;"  class="row">
+                <form action="/serverless" id="form" method="post" name="form">
+                  
+                  <form class="form" action="/configure" method="POST">
                     <h4><b>Machine IP</b></h4>
                     <input style="color: black" type="text" class="box" name="machineip" placeholder="Enter Machine IP" autocomplete="off" />
                     <br>
@@ -51,8 +61,28 @@
                     <input style="color: black;" type="submit" value="Submit" id="submit" />
                     
             </form>
+     
+                </form>
         </div>
-
+        <div class="container1" style="margin-top: 2%;  height: 400px">
+            <div style="margin-bottom: 30%;">
+                <h3 style="color: greenyellow;">Console</h3>
+            <h4 style="text-align: left; margin-left: 10px; color: green">docker@ mip:~$</h4>
+            <h5>
+              <pre>
+                 data 
+            </pre>
+            </h5>
+            </div>
+            
+        </div>
+        <footer id="footer">
+          <i class="social-icon fab fa-twitter fa-4x"></i>
+          <i class="social-icon fab fa-facebook-f fa-4x"></i>
+          <i class="social-icon fab fa-instagram fa-4x"></i>
+          <i class="social-icon fas fa-envelope-square fa-4x"></i>
+          <h1>© Copyright 2022 Docker Complete Solution</h1>
+        </footer>
+    </div>
+    
 </body>
-
-</html>
