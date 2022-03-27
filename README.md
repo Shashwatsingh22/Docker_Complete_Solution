@@ -1,6 +1,4 @@
 # Docker Complete Solution
-![N|Solid](https://cdn.icon-icons.com/icons2/2248/PNG/128/ansible_icon_136957.png)![N|Solid](https://cdn.icon-icons.com/icons2/2415/PNG/128/docker_original_wordmark_logo_icon_146557.png) ![N|Solid](https://cdn.icon-icons.com/icons2/2699/PNG/128/nodejs_logo_icon_169910.png)
-
 A complete solution for the developers to get started.
 Complete solution for Docker is our aim to provide a platform to the developer. If the developer converts their all the back-end work (API, Web-Apps) and front-end work into Docker image, then this platform helps to configure the environment of Docker on the server, able to deploy your container, monitor your container, manage your networking parts, image creation etc.
 
@@ -54,3 +52,5 @@ We are building the tool for beginner friendly to get started without any prereq
 3. **Docker-** It is an type of Engine which provides you an flexibility to mange your containers and this tool is our main target to which we have tried to fully automate it.
 
 4. **MongoDB-** It is a NoSQL database which stores data in form of key-value pairs. By the help of this database I am able to manage the user with their authentication, and as well as their server data.
+
+![N|Solid](https://cdn.icon-icons.com/icons2/2248/PNG/128/ansible_icon_136957.png)![N|Solid](https://cdn.icon-icons.com/icons2/2415/PNG/128/docker_original_wordmark_logo_icon_146557.png) ![N|Solid](https://cdn.icon-icons.com/icons2/2699/PNG/128/nodejs_logo_icon_169910.png)
