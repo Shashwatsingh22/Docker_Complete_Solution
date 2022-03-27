@@ -12,27 +12,29 @@ You just come to this platform and make the account start using the service by g
 
 ## Module Architecture
 ### Ansible Architecture
-
-
-### Docker API Architecture
 ![API-architecture](https://user-images.githubusercontent.com/60294234/160270961-905f0216-35c1-4619-afee-e5f8676988f5.png)
 
+### Docker API Architecture
+![docker-API](https://user-images.githubusercontent.com/60294234/160271968-fcf1e3f3-b6ca-43c4-916a-60249d054888.png)
 
 ## Features
-####1. Automation
+#### 1. Automation
 - Fetch details from mongo database.
 - Update the user .bashrc file with Aws user credentials.
 - Copy the server tag name to ansible-playbook host. 
 
-####2. Docker Controller
+#### 2. Docker Controller
 - Get the machine IP
 - Create Container, Start/Stop Container, Image builder, etc.
 - Integrate with GitHub that directly manage our Image Repository.
 
-####3. Serverless
+#### 3. Serverless
 - Container runs on our one of the managed server.
 - Random function that can randomly allocating the Public IP to access the docker service. 
-
+- 
+#### 4. Dockerfile Editor
+- Edit the dockerfile through the live editor.
+- Create and push the image to dockerhub.
 
 ## Our Requirement to setup your Complete docker solution
 1. IAM user with programatic access.
