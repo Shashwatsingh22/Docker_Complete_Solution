@@ -1,9 +1,11 @@
 const express = require('express');
+const util = require('util');
+
 const exec = util.promisify(require('child_process').exec);
 
 const routes = express.Router();
 
-function runCmd(cmd,res)
+async function runCmd(cmd,res)
 {
     try{
         const run = await exec(cmd);
@@ -18,7 +20,7 @@ function runCmd(cmd,res)
 }
 
 
-routes.get('/view',async(req,res,next)=>
+routes.get('/view',(req,res,next)=>
 {
     const action = req.body.action;
 
@@ -50,7 +52,7 @@ routes.get('/view',async(req,res,next)=>
     }
 })
 
-routes.post('/change',async(req,res,next)=>
+routes.post('/change',(req,res,next)=>
 {
     const action = req.body.action;
 
