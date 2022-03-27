@@ -32,7 +32,7 @@ You just come to this platform and make the account start using the service by g
 #### 3. Serverless
 - Container runs on our one of the managed server.
 - Random function that can randomly allocating the Public IP to access the docker service. 
-- 
+
 #### 4. Dockerfile Editor
 - Edit the dockerfile through the live editor.
 - Create and push the image to dockerhub.
@@ -53,4 +53,6 @@ We are building the tool for beginner friendly to get started without any prereq
 
 4. **MongoDB-** It is a NoSQL database which stores data in form of key-value pairs. By the help of this database I am able to manage the user with their authentication, and as well as their server data.
 
-![N|Solid](https://cdn.icon-icons.com/icons2/2248/PNG/128/ansible_icon_136957.png)![N|Solid](https://cdn.icon-icons.com/icons2/2415/PNG/128/docker_original_wordmark_logo_icon_146557.png) ![N|Solid](https://cdn.icon-icons.com/icons2/2699/PNG/128/nodejs_logo_icon_169910.png)
+![N|Solid](https://cdn.icon-icons.com/icons2/2248/PNG/128/ansible_icon_136957.png)![N|Solid](https://cdn.icon-icons.com/icons2/2415/PNG/128/docker_original_wordmark_logo_icon_146557.png) ![N|Solid](https://cdn.icon-icons.com/icons2/2699/PNG/128/nodejs_logo_icon_169910.png) ![N|Solid](https://cdn.icon-icons.com/icons2/2415/PNG/128/mongodb_original_wordmark_logo_icon_146425.png) ![N|Solid](https://cdn.icon-icons.com/icons2/2107/PNG/128/file_type_aws_icon_130732.png)
+
+
