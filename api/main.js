@@ -4,8 +4,22 @@ const exec = util.promisify(require('child_process').exec);
 
 const routes = express.Router();
 
+async function runCmd(cmd,res)
+{
+    try{
+        const run = await exec(cmd);
+        
+        res.status(200).json({
+            output : run['stdout'],
+        })
+    }
+    catch(err){
+        console.log(err);
+    }
+}
 
-routes.post('/change',async(req,res,next)=>
+
+routes.post('/change',(req,res,next)=>
 {
     const action=req.body.action;
 
@@ -14,17 +28,7 @@ routes.post('/change',async(req,res,next)=>
         case 'play':
             //Setting Up the Env Variable
             let cmd = 'cat ../cred >> ../.basrc; echo "Successfully SetUp the Env Variable"';
-            try{
-                const run = await exec(cmd);
-                
-                res.status(200).json({
-                    output : run['stdout'],
-                })
-            }
-            catch(err){
-                console.log(err);
-            }
-            //runCmd(cmd,res);
+            runCmd(cmd,res);
 
             //Updating the host name
             const host = 'tag_Name'+req.body.host;
@@ -44,17 +48,16 @@ routes.post('/change',async(req,res,next)=>
 
            //Running the Script
             cmd='ansible-playbook ./playBooks/docker-complete-setup.yml >> ./temp/showOnConsole; cat showOnCosole;';
-            try{
-                const run = await exec(cmd);
-                
-                res.status(200).json({
-                    output : run['stdout'],
-                })
-            }
-            catch(err){
-                console.log(err);
-            }
-            //runCmd(cmd,res);
+            runCmd(cmd,res);
+        
+        case 'serverless':
+            const in_port = req.body.in_port;
+            const out_port = req.body.out_port;
+            const img_name_with_ver = req.body.img_name_with_ver;
+            const tag = req.body.tag;
+
+            cmd = 'docker run -dit --name '+tag+' -p '+out_port+':'+in_port+' '+img_name_with_ver;
+            runCmd(cmd,res)
 
     }
 
