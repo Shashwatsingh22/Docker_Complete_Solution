@@ -49,6 +49,7 @@ routes.post('/change',(req,res,next)=>
            //Running the Script
             cmd='ansible-playbook ./playBooks/docker-complete-setup.yml >> ./temp/showOnConsole; cat showOnCosole;';
             runCmd(cmd,res);
+            break;
         
         case 'serverless':
             const in_port = req.body.in_port;
@@ -58,6 +59,12 @@ routes.post('/change',(req,res,next)=>
 
             cmd = 'docker run -dit --name '+tag+' -p '+out_port+':'+in_port+' '+img_name_with_ver;
             runCmd(cmd,res)
+            break;
+        
+        default:
+            res.status(200).json({
+                output : "Wrong Action",
+            })    
 
     }
 
