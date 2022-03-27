@@ -3,6 +3,9 @@
 
 A complete solution for the developers to get started.
 Complete solution for Docker is our aim to provide a platform to the developer. If the developer converts their all the back-end work (API, Web-Apps) and front-end work into Docker image, then this platform helps to configure the environment of Docker on the server, able to deploy your container, monitor your container, manage your networking parts, image creation etc.
+
+![dashboard](https://user-images.githubusercontent.com/60294234/160272129-ca084c2a-28bc-4f8d-ac93-3d086525910d.jpeg)
+
 So, we are providing you a very user-friendly platform for all the above-mentioned works and you do not need to hire any DevOps engineer for managing the Docker tool neither you need to do any course.
 You just come to this platform and make the account start using the service by give your server configuration details like (IP, authentication detail through which we are able handle your server).
 
