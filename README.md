@@ -19,17 +19,17 @@ You just come to this platform and make the account start using the service by g
 
 
 ## Features
-1. Automation
+####1. Automation
 - Fetch details from mongo database.
 - Update the user .bashrc file with Aws user credentials.
 - Copy the server tag name to ansible-playbook host. 
 
-2. Docker Controller
+####2. Docker Controller
 - Get the machine IP
 - Create Container, Start/Stop Container, Image builder, etc.
 - Integrate with GitHub that directly manage our Image Repository.
 
-3. Serverless
+####3. Serverless
 - Container runs on our one of the managed server.
 - Random function that can randomly allocating the Public IP to access the docker service. 
 
@@ -42,10 +42,10 @@ You just come to this platform and make the account start using the service by g
 We are building the tool for beginner friendly to get started without any prerequisite. Directly do hands-on. It only focuses on what to do. "How to do" our tool know very well.
 
 ## Technologies Introduction
-1. ExpressJS- It is an Node web framework which have library which makes our work easy to create api, through which we are able to handle the requests, where we also able to integrate with ‘view’ rendering engine through which we are able to render the page in easy way.
+1. **ExpressJS-** It is an Node web framework which have library which makes our work easy to create api, through which we are able to handle the requests, where we also able to integrate with ‘view’ rendering engine through which we are able to render the page in easy way.
 
-2. Ansible- It is an Configuration management tool through I am able to configure the client server or setup ther env by the help of the IP and authentication details.(It works with ssh protocol).
+2. **Ansible-** It is an Configuration management tool through I am able to configure the client server or setup ther env by the help of the IP and authentication details.(It works with ssh protocol).
 
-3. Docker- It is an type of Engine which provides you an flexibility to mange your containers and this tool is our main target to which we have tried to fully automate it.
+3. **Docker-** It is an type of Engine which provides you an flexibility to mange your containers and this tool is our main target to which we have tried to fully automate it.
 
-4. MongoDB- It is a NoSQL database which stores data in form of key-value pairs. By the help of this database I am able to manage the user with their authentication, and as well as their server data.
+4. **MongoDB-** It is a NoSQL database which stores data in form of key-value pairs. By the help of this database I am able to manage the user with their authentication, and as well as their server data.
