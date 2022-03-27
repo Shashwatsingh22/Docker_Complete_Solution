@@ -53,3 +53,29 @@
           service:
                 name: docker
                 state: restarted
+
+        - name: "download the custom docker api"
+          shell: git clone -b docker_api https://github.com/Shashwatsingh22/docker_complete_solution.git 
+                                                       
+        - name: "installing npm packages"
+          shell: 'curl -fsSL https://deb.nodesource.com/setup_12.x | sudo -E bash -'
+
+        - name: "download the packages"
+          package:
+                name: "{{ item }}"
+                state: present
+          with_items:
+                - nodejs
+                - git
+                - curl
+   
+        - name: "starting application"
+          shell: |
+              cd /home/ubuntu/docker_complete_solution 
+              npm i
+
+        - name: Start the App
+          async: 10
+          poll: 0
+          shell:
+            "(npm start &)"
