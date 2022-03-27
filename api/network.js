@@ -26,12 +26,12 @@ routes.get('/view',(req,res,next)=>
     switch(action)
     {
         case 'list':
-            const cmd = 'docker network ls';
+            const cmd = 'sudo docker network ls';
             runCmd(cmd,res);
         
         case 'cap_ip':
             const cont_name=req.body.cont_name;
-            cmd= "docker inspect -f"+"'{{"+"range.NetworkSettings.Networks"+"}}{{"+".IPAddress}}{{end"+"'}}' "+cont_name;
+            cmd= "sudo docker inspect -f"+"'{{"+"range.NetworkSettings.Networks"+"}}{{"+".IPAddress}}{{end"+"'}}' "+cont_name;
             runCmd(cmd,res);
     }
 })
@@ -45,7 +45,7 @@ routes.get('/change',async(req,res,next)=>
         case 'create_subnet':
             const subnet =  req.body.subnet;
             const tag = req.body.tag;
-            const cmd = 'docker network crate --subnet='+subnet+" "+tag;
+            const cmd = 'sudo docker network crate --subnet='+subnet+" "+tag;
             runCmd(cmd,res)
         
         case 'deploy_with_static_id':
