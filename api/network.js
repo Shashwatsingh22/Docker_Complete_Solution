@@ -22,16 +22,18 @@ async function runCmd(cmd,res)
 routes.get('/view',(req,res,next)=>
 {
     const action = req.body.action;
+    var cmd;
+    var cont_name;
 
     switch(action)
     {
         case 'list':
-            const cmd = 'sudo docker network ls';
+            cmd = 'sudo docker network ls';
             runCmd(cmd,res);
             break;
         
         case 'cap_ip':
-            const cont_name=req.body.cont_name;
+            cont_name=req.body.cont_name;
             cmd= "sudo docker inspect -f"+"'{{"+"range.NetworkSettings.Networks"+"}}{{"+".IPAddress}}{{end"+"'}}' "+cont_name;
             runCmd(cmd,res);
             break;
@@ -46,13 +48,13 @@ routes.get('/view',(req,res,next)=>
 routes.get('/change',async(req,res,next)=>
 {
     const action = req.body.action;
-
+    var cmd; 
     switch(action)
     {
         case 'create_subnet':
             const subnet =  req.body.subnet;
             const tag = req.body.tag;
-            const cmd = 'sudo docker network crate --subnet='+subnet+" "+tag;
+            cmd = 'sudo docker network crate --subnet='+subnet+" "+tag;
             runCmd(cmd,res)
             break;
         

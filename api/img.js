@@ -21,19 +21,23 @@ async function runCmd(cmd,res)
 
 routes.get('/view',(req,res,next)=>
 {
+    var cmd;
+    var img_id;
+    
     const action = req.body.action;
     console.log(action);
 
     switch(action)
     {
         case 'list':
-            const cmd = 'sudo docker images';
+            cmd = 'sudo docker images';
             runCmd(cmd,res);
             break;
         
         case 'inspect_by_id':
-            const img_id = req.body.img_id;
+            img_id = req.body.img_id;
             cmd = 'sudo docker image inspect '+ img_id;
+            console.log(cmd);
             runCmd(cmd,res);
             break;
         
@@ -53,17 +57,19 @@ routes.get('/view',(req,res,next)=>
 routes.get('/change',(req,res,next)=>
 {
     const action = req.body.action;
-
+    var name_with_tag;
+    var img_id;
+    var cmd;
     switch(action)
     {
         case 'pull':
-            const name_with_tag =  req.body.name_with_tag;
-            const cmd = 'sudo docker pull '+name_with_tag;
+            name_with_tag =  req.body.name_with_tag;
+            cmd = 'sudo docker pull '+name_with_tag;
             runCmd(cmd,res)
             break;
         
         case 'rm':
-            const img_id = req.body.img_id;
+            img_id = req.body.img_id;
             cmd='sudo docker rmi '+img_id;
             runCmd(cmd,res);
             break;

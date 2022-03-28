@@ -23,23 +23,26 @@ async function runCmd(cmd,res)
 routes.get('/view',(req,res,next)=>
 {
     const action = req.body.action;
+    var cmd;
+    var cont_name;
+    var cont_id;
 
     switch(action)
     {
         case 'list':
-            const cmd = 'sudo docker ps';
+            cmd = 'sudo docker ps';
             runCmd(cmd,res);
             break;
         
         
         case 'inspect_by_id':
-            const cont_id = req.body.cont_id;
+            cont_id = req.body.cont_id;
             cmd = 'sudo docker container inspect '+ cont_id;
             runCmd(cmd,res);
             break;
         
         case 'inspect_by_name':
-            const cont_name=req.body.cont_name;
+            cont_name=req.body.cont_name;
             cmd = 'sudo docker container inspect '+cont_name;
             runCmd(cmd,res);
             break; 
@@ -54,13 +57,18 @@ routes.get('/view',(req,res,next)=>
         
             runCmd(cmd,res);
             break;
+        
+        default:
+
     }
 })
 
 routes.post('/change',(req,res,next)=>
 {
     const action = req.body.action;
-
+    var cmd;
+    var cont_name;
+    
     switch(action)
     {
         case 'deploy':
@@ -69,12 +77,12 @@ routes.post('/change',(req,res,next)=>
             const img_name_with_ver = req.body.img_name_with_ver;
             const tag = req.body.tag;
 
-            const cmd = 'sudo docker run -dit --name '+tag+' -p '+out_port+':'+in_port+' '+img_name_with_ver;
+            cmd = 'sudo docker run -dit --name '+tag+' -p '+out_port+':'+in_port+' '+img_name_with_ver;
             runCmd(cmd,res)
             break;
         
         case 'stop':
-            const cont_name = req.body.cont_name;
+            cont_name = req.body.cont_name;
             cmd='sudo docker container stop '+cont_name;
             runCmd(cmd,res);
             break;
